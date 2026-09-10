@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玛雅luntan-玛雅文明讨论社区与历史资料交流平台</title>
+<meta name="description" content="玛雅luntan是一个围绕玛雅文明历史、文字、建筑、天文历法与考古发现的讨论社区，提供版块导航、热门话题、资料整理与参与指南。">
+<meta name="keywords" content="玛雅luntan,玛雅文明,玛雅论坛,玛雅历史,玛雅文字,玛雅历法,考古讨论">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--stone:#2b2620;
+--stone-light:#3d362e;
+--jade:#1f6f5c;
+--jade-light:#2b8a73;
+--gold:#c8963e;
+--gold-light:#e0b25c;
+--sand:#f4efe6;
+--sand-dark:#e6ddcd;
+--text:#2f2a24;
+--text-muted:#6b6157;
+--line:#d8cebd;
+--radius:10px;
+}
+body{
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+background:var(--sand);
+color:var(--text);
+line-height:1.7;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 顶栏 */
+.topbar{
+background:var(--stone);
+color:#d9d0c2;
+font-size:13px;
+padding:8px 0;
+border-bottom:1px solid #4a4239;
+}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar .tagline{letter-spacing:.5px}
+.topbar nav a{margin-left:18px;color:#c8bfb0;transition:color .2s}
+.topbar nav a:hover{color:var(--gold-light)}
+
+/* 页眉 */
+header.site-header{
+background:linear-gradient(160deg,#332d26 0%,#241f1a 100%);
+color:#f2ebdd;
+padding:26px 0 30px;
+position:relative;
+overflow:hidden;
+}
+header.site-header::after{
+content:"";
+position:absolute;right:-60px;top:-60px;
+width:260px;height:260px;
+border:2px solid rgba(200,150,62,.25);
+border-radius:50%;
+}
+header.site-header::before{
+content:"";
+position:absolute;right:40px;bottom:-90px;
+width:180px;height:180px;
+border:2px solid rgba(31,111,92,.35);
+border-radius:50%;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+width:52px;height:52px;flex:0 0 52px;
+background:linear-gradient(145deg,var(--jade),var(--jade-light));
+border-radius:12px;
+display:flex;align-items:center;justify-content:center;
+font-size:24px;font-weight:700;color:#f6f0e2;
+box-shadow:0 4px 14px rgba(0,0,0,.35);
+}
+.brand-text h1{font-size:24px;font-weight:700;letter-spacing:1px}
+.brand-text h1 span{color:var(--gold-light)}
+.brand-text p{font-size:13px;color:#b3a998;margin-top:2px}
+.header-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+display:inline-block;padding:10px 22px;border-radius:8px;
+font-size:14px;font-weight:500;transition:all .2s;cursor:pointer;border:1px solid transparent;
+}
+.btn-gold{background:var(--gold);color:#2b2620}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{border-color:rgba(224,178,92,.55);color:var(--gold-light)}
+.btn-ghost:hover{background:rgba(224,178,92,.12)}
+
+/* 主导航 */
+nav.mainnav{
+background:var(--stone-light);
+border-bottom:3px solid var(--jade);
+position:sticky;top:0;z-index:50;
+box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+nav.mainnav ul{
+display:flex;list-style:none;flex-wrap:wrap;max-width:1180px;margin:0 auto;padding:0 20px;
+}
+nav.mainnav li a{
+display:block;padding:14px 18px;color:#ddd4c5;font-size:15px;
+border-bottom:3px solid transparent;margin-bottom:-3px;transition:all .2s;
+}
+nav.mainnav li a:hover,nav.mainnav li a.active{
+color:var(--gold-light);border-bottom-color:var(--gold);
+background:rgba(255,255,255,.04);
+}
+
+/* 首屏 */
+.hero{
+background:linear-gradient(115deg,#f7f2e8 0%,#ece3d3 100%);
+border-bottom:1px solid var(--line);
+padding:44px 0 40px;
+}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+.hero h2{font-size:30px;line-height:1.4;color:var(--stone);margin-bottom:14px}
+.hero h2 em{font-style:normal;color:var(--jade);border-bottom:3px solid var(--gold);padding-bottom:2px}
+.hero p.lead{font-size:16px;color:var(--text-muted);margin-bottom:20px}
+.hero-points{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-bottom:24px}
+.hero-points li{font-size:14.5px;color:var(--text);padding-left:22px;position:relative}
+.hero-points li::before{
+content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+background:var(--jade);border-radius:2px;transform:rotate(45deg);
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-jade{background:var(--jade);color:#f4efe6}
+.btn-jade:hover{background:var(--jade-light)}
+.btn-line{border-color:var(--stone);color:var(--stone)}
+.btn-line:hover{background:var(--stone);color:#f4efe6}
+
+.hero-aside{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:22px 24px;box-shadow:0 6px 20px rgba(43,38,32,.07);
+}
+.hero-aside h3{font-size:16px;color:var(--stone);margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--line);display:flex;align-items:center;gap:8px}
+.hero-aside h3::before{content:"";width:6px;height:18px;background:var(--gold);border-radius:3px}
+.hero-aside ol{list-style:none;counter-reset:rank}
+.hero-aside ol li{
+counter-increment:rank;display:flex;gap:12px;align-items:flex-start;
+padding:9px 0;border-bottom:1px solid #f0ebe1;font-size:14px;
+}
+.hero-aside ol li:last-child{border-bottom:none}
+.hero-aside ol li::before{
+content:counter(rank);flex:0 0 22px;height:22px;border-radius:5px;
+background:var(--sand-dark);color:var(--stone);font-size:12px;font-weight:700;
+display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.hero-aside ol li:nth-child(-n+3)::before{background:var(--gold);color:#fff}
+.hero-aside ol li a{color:var(--text);transition:color .2s}
+.hero-aside ol li a:hover{color:var(--jade)}
+.hero-aside ol li span{display:block;font-size:12.5px;color:var(--text-muted);margin-top:1px}
+
+/* 通用区块 */
+section.block{padding:46px 0}
+section.block.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.block-head h2{font-size:23px;color:var(--stone);position:relative;padding-left:16px}
+.block-head h2::before{
+content:"";position:absolute;left:0;top:4px;bottom:4px;width:5px;
+background:linear-gradient(var(--jade),var(--gold));border-radius:3px;
+}
+.block-head p{font-size:14px;color:var(--text-muted)}
+.block-head .more{font-size:14px;color:var(--jade);border-bottom:1px solid transparent;transition:.2s}
+.block-head .more:hover{border-bottom-color:var(--jade)}
+
+/* 版块卡片 */
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.board-card{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:22px;transition:transform .22s,box-shadow .22s,border-color .22s;
+display:flex;flex-direction:column;
+}
+.board-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(43,38,32,.11);border-color:var(--jade)}
+.board-card .icon{
+width:44px;height:44px;border-radius:10px;background:var(--sand-dark);
+display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;
+}
+.board-card h3{font-size:17px;color:var(--stone);margin-bottom:8px}
+.board-card p{font-size:14px;color:var(--text-muted);flex:1;margin-bottom:14px}
+.board-meta{display:flex;justify-content:space-between;font-size:12.5px;color:#948a7c;border-top:1px dashed var(--line);padding-top:12px}
+.board-meta strong{color:var(--jade);font-weight:600}
+
+/* 话题列表 */
+.topic-layout{display:grid;grid-template-columns:2.1fr 1fr;gap:34px;align-items:start}
+.topic-list{list-style:none}
+.topic-list li{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:18px 20px;margin-bottom:14px;transition:border-color .2s,box-shadow .2s;
+}
+.topic-list li:hover{border-color:var(--gold);box-shadow:0 6px 16px rgba(200,150,62,.14)}
+.topic-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.topic-title a{font-size:16px;font-weight:600;color:var(--stone);transition:color .2s}
+.topic-title a:hover{color:var(--jade)}
+.badge{font-size:11.5px;padding:2px 9px;border-radius:20px;font-weight:500;white-space:nowrap}
+.badge-hot{background:#fbe9e3;color:#b5522f}
+.badge-new{background:#e3f2ed;color:var(--jade)}
+.badge-guide{background:#f3ecdc;color:#8a6a25}
+.topic-desc{font-size:14px;color:var(--text-muted);margin-bottom:10px}
+.topic-foot{display:flex;gap:18px;font-size:12.5px;color:#948a7c;flex-wrap:wrap}
+.topic-foot span::before{content:"·";margin-right:6px;color:var(--gold)}
+.topic-foot span:first-child::before{content:"";margin:0}
+
+/* 侧栏 */
+.side-card{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:20px 22px;margin-bottom:22px;
+}
+.side-card h3{font-size:16px;color:var(--stone);margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.side-card ul{list-style:none}
+.side-card ul li{padding:8px 0;font-size:14px;border-bottom:1px solid #f2ede4;display:flex;justify-content:space-between;gap:10px}
+.side-card ul li:last-child{border-bottom:none}
+.side-card ul li a{color:var(--text);transition:color .2s}
+.side-card ul li a:hover{color:var(--jade)}
+.side-card ul li em{font-style:normal;color:#a99e8e;font-size:12.5px;white-space:nowrap}
+.side-note{font-size:13.5px;color:var(--text-muted);line-height:1.75}
+.side-note strong{color:var(--stone)}
+
+/* 指南 */
+.guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.guide-item{
+background:var(--sand);border:1px solid var(--line);border-radius:var(--radius);
+padding:22px 20px;position:relative;
+}
+.guide-item .num{
+font-size:13px;font-weight:700;color:#fff;background:var(--jade);
+width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+margin-bottom:12px;
+}
+.guide-item h3{font-size:15.5px;color:var(--stone);margin-bottom:8px}
+.guide-item p{font-size:13.5px;color:var(--text-muted)}
+
+/* 资料区 */
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.resource-card{
+background:#fff;border:1px solid var(--line);border-left:4px solid var(--jade);
+border-radius:var(--radius);padding:20px 22px;
+}
+.resource-card:nth-child(2){border-left-color:var(--gold)}
+.resource-card:nth-child(3){border-left-color:#8a5a3b}
+.resource-card h3{font-size:16px;color:var(--stone);margin-bottom:10px}
+.resource-card p{font-size:14px;color:var(--text-muted);margin-bottom:12px}
+.resource-card ul{list-style:none;font-size:13.5px}
+.resource-card ul li{padding:5px 0;color:var(--text-muted);padding-left:16px;position:relative}
+.resource-card ul li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* FAQ */
+.faq-list{max-width:880px;margin:0 auto}
+.faq-item{
+background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+margin-bottom:12px;overflow:hidden;
+}
+.faq-item summary{
+list-style:none;cursor:pointer;padding:16px 22px;font-size:15.5px;font-weight:600;
+color:var(--stone);display:flex;justify-content:space-between;align-items:center;gap:14px;
+transition:background .2s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+content:"+";font-size:20px;color:var(--jade);font-weight:400;flex:0 0 auto;transition:transform .25s;
+}
+.faq-item[open] summary{background:#faf7f1}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .faq-body{padding:0 22px 18px;font-size:14.5px;color:var(--text-muted)}
+
+/* 页脚 */
+footer.site-footer{
+background:var(--stone);color:#b6ac9d;padding:44px 0 0;margin-top:10px;
+}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;padding-bottom:34px}
+.footer-brand h4{color:#f0e9db;font-size:18px;margin-bottom:12px}
+.footer-brand p{font-size:13.5px;line-height:1.8;color:#9d9484}
+.footer-col h5{color:#e3d9c7;font-size:14.5px;margin-bottom:14px;font-weight:600}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{font-size:13.5px;color:#a89e8e;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold-light)}
+.footer-bottom{
+border-top:1px solid #443c33;padding:18px 0;font-size:13px;
+display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#8b8274;
+}
+
+/* 响应式 */
+@media(max-width:1000px){
+.hero-grid{grid-template-columns:1fr;gap:28px}
+.topic-layout{grid-template-columns:1fr}
+.board-grid{grid-template-columns:repeat(2,1fr)}
+.guide-grid{grid-template-columns:repeat(2,1fr)}
+.resource-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+.wrap{padding:0 16px}
+.brand-text h1{font-size:20px}
+.header-cta{width:100%}
+.header-cta .btn{flex:1;text-align:center;padding:10px 12px}
+nav.mainnav ul{overflow-x:auto;flex-wrap:nowrap;padding:0 10px}
+nav.mainnav li a{padding:13px 14px;font-size:14px;white-space:nowrap}
+.hero{padding:32px 0 30px}
+.hero h2{font-size:23px}
+.hero-points{grid-template-columns:1fr}
+.board-grid{grid-template-columns:1fr}
+.guide-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:26px}
+.block-head h2{font-size:20px}
+section.block{padding:34px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<div class="wrap">
+<span class="tagline">玛雅文明爱好者的中文讨论空间 · 理性交流 · 尊重史料</span>
+<nav>
+<a href="#boards">版块</a>
+<a href="#topics">热门话题</a>
+<a href="#guide">参与指南</a>
+<a href="#faq">常见问题</a>
+</nav>
+</div>
+</div>
+
+<header class="site-header">
+<div class="wrap header-inner">
+<div class="brand">
+<div class="brand-mark">玛</div>
+<div class="brand-text">
+<h1>玛雅<span>luntan</span></h1>
+<p>玛雅文明历史 · 文字 · 建筑 · 历法 · 考古交流社区</p>
+</div>
+</div>
+<div class="header-cta">
+<a href="#boards" class="btn btn-gold">浏览版块</a>
+<a href="#guide" class="btn btn-ghost">新手指南</a>
+</div>
+</div>
+</header>
+
+<nav class="mainnav">
+<ul>
+<li><a href="#intro" class="active">社区首页</a></li>
+<li><a href="#boards">讨论版块</a></li>
+<li><a href="#topics">热门话题</a></li>
+<li><a href="#guide">参与指南</a></li>
+<li><a href="#resources">资料整理</a></li>
+<li><a href="#faq">常见问题</a></li>
+</ul>
+</nav>
+
+<main>
+
+<section class="hero" id="intro">
+<div class="wrap hero-grid">
+<div>
+<h2>在<em>玛雅luntan</em>，把对玛雅文明的兴趣聊成系统的认识</h2>
+<p class="lead">玛雅文明横跨中美洲数千年，涉及象形文字、金字塔建筑、天文历法、城邦政治与宗教信仰等多个方向。这里不追求速成结论，而是提供一个分版块、可检索、可长期沉淀的讨论环境，帮助初学者找到入口，也方便进阶爱好者交换资料与观点。</p>
+<ul class="hero-points">
+<li>按文字、建筑、历法、考古分版块讨论</li>
+<li>话题带标签，便于检索与回溯</li>
+<li>鼓励标注资料来源与不同观点</li>
+<li>面向中文读者，降低阅读门槛</li>
+</ul>
+<div class="hero-actions">
+<a href="#boards" class="btn btn-jade">进入讨论版块</a>
+<a href="#guide" class="btn btn-line">了解发帖规范</a>
+</div>
+</div>
+<aside class="hero-aside">
+<h3>本周讨论热度参考</h3>
+<ol>
+<li><a href="#topics">如何入门玛雅象形文字？</a><span>文字与语言版块 · 入门向</span></li>
+<li><a href="#topics">玛雅长计历与公元纪年的换算思路</a><span>历法与天文版块 · 方法讨论</span></li>
+<li><a href="#topics">金字塔建筑中的声学现象整理</a><span>建筑与遗址版块 · 资料汇总</span></li>
+<li><a href="#topics">古典期城邦关系的一般性理解</a><span>历史与政治版块 · 观点交流</span></li>
+<li><a href="#topics">常见玛雅题材纪录片与书目推荐</a><span>资料与书单版块 · 共享向</span></li>
+</ol>
+</aside>
+</div>
+</section>
+
+<section class="block alt" id="boards">
+<div class="wrap">
+<div class="block-head">
+<div>
+<h2>讨论版块</h2>
+<p>按研究方向和兴趣点划分，新用户可以从“入门问答”开始</p>
+</div>
+<a href="#topics" class="more">查看全部话题 →</a>
+</div>
+<div class="board-grid">
+
+<article class="board-card">
+<div class="icon">📜</div>
+<h3>文字与语言</h3>
+<p>讨论玛雅象形文字的构字逻辑、音节与表意符号、碑铭释读方法，以及现代玛雅语族语言的基本情况。</p>
+<div class="board-meta"><span>主题方向：碑铭 · 符号 · 语言</span><strong>入门友好</strong></div>
+</article>
+
+<article class="board-card">
+<div class="icon">🏛️</div>
+<h3>建筑与遗址</h3>
+<p>围绕金字塔、球场、宫殿与城市布局展开，关注建筑结构、功能推测以及遗址保护相关话题。</p>
+<div class="board-meta"><span>主题方向：建筑 · 遗址 · 布局</span><strong>图文并重</strong></div>
+</article>
+
+<article class="board-card">
+<div class="icon">🌌</div>
+<h3>历法与天文</h3>
+<p>梳理长计历、卓尔金历、哈布历等历法系统的基本规则，以及玛雅天文观测与记录方式。</p>
+<div class="board-meta"><span>主题方向：历法 · 观测 · 换算</span><strong>偏方法讨论</strong></div>
+</article>
+
+<article class="board-card">
+<div class="icon">🗿</div>
+<h3>历史与政治</h3>
+<p>讨论前古典期、古典期、后古典期的一般脉络，城邦之间的关系、兴衰过程与史料解读差异。</p>
+<div class="board-meta"><span>主题方向：分期 · 城邦 · 史料</span><strong>观点交流</strong></div>
+</article>
+
+<article class="board-card">
+<div class="icon">🔍</div>
+<h3>考古与发现</h3>
+<p>关注考古方法、遥感与测绘技术、新发现的公开报道，以及如何理性看待媒体上的相关消息。</p>
+<div class="board-meta"><span>主题方向：方法 · 发现 · 辨析</span><strong>需注明来源</strong></div>
+</article>
+
+<article class="board-card">
+<div class="icon">📚</div>
+<h3>资料与书单</h3>
+<p>共享书目、纪录片、公开课程与博物馆信息，交流阅读顺序与选书经验，避免重复踩坑。</p>
+<div class="board-meta"><span>主题方向：书目 · 影像 · 展览</span><strong>共享互助</strong></div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="block" id="topics">
+<div class="wrap">
+<div class="block-head">
+<div>
+<h2>热门话题</h2>
+<p>以下话题来自各版块的长期讨论方向，适合作为阅读与参与的起点</p>
+</div>
+</div>
+
+<div class="topic-layout">
+<div>
+<ul class="topic-list">
+
+<li>
+<div class="topic-title">
+<a href="#topics">零基础如何开始了解玛雅象形文字？</a>
+<span class="badge badge-new">入门</span>
+</div>
+<p class="topic-desc">从符号分类、常见音节表到碑铭阅读顺序，整理出一条相对平缓的学习路径，并讨论初学者容易混淆的概念。</p>
+<div class="topic-foot">
+<span>文字与语言版块</span><span>讨论方向：学习路径</span><span>适合新手</span>
+</div>
+</li>
+
+<li>
+<div class="topic-title">
+<a href="#topics">长计历换算的基本思路与常见误区</a>
+<span class="badge badge-hot">热议</span>
+</div>
+<p class="topic-desc">围绕长计历的计数单位与换算逻辑展开，重点讨论换算中容易出现的理解偏差，以及不同资料表述差异的原因。</p>
+<div class="topic-foot">
+<span>历法与天文版块</span><span>讨论方向：方法辨析</span><span>需谨慎引证</span>
+</div>
+</li>
+
+<li>
+<div class="topic-title">
+<a href="#topics">奇琴伊察球场与中美洲球赛的一般认识</a>
+<span class="badge badge-guide">资料</span>
+</div>
+<p class="topic-desc">从建筑形制、场地布局到球赛的文化含义，梳理目前较为通行的解释，并区分哪些属于推测、哪些有实物依据。</p>
+<div class="topic-foot">
+<span>建筑与遗址版块</span><span>讨论方向：功能与象征</span><span>图文整理</span>
+</div>
+</li>
+
+<li>
+<div class="topic-title">
+<a href="#topics">古典期城邦关系应该怎样理解更稳妥？</a>
+<span class="badge badge-hot">热议</span>
+</div>
+<p class="topic-desc">围绕联盟、联姻、冲突等关系形态展开讨论，强调史料有限的情况下如何避免过度推断和简单化叙事。</p>
+<div class="topic-foot">
+<span>历史与政治版块</span><span>讨论方向：史料解读</span><span>观点多样</span>
+</div>
+</li>
+
+<li>
+<div class="topic-title">
+<a href="#topics">看到“玛雅新发现”新闻时，怎样判断可信度？</a>
+<span class="badge badge-new">实用</span>
+</div>
+<p class="topic-desc">整理一套简单的核查思路：看来源、看是否同行评议、看表述是否夸大、看是否有原始论文或考古机构说明。</p>
+<div class="topic-foot">
+<span>考古与发现版块</span><span>讨论方向：信息辨析</span><span>日常实用</span>
+</div>
+</li>
+
+<li>
+<div class="topic-title">
+<a href="#topics">中文读者可用的玛雅文明入门书目与影像资料</a>
+<span class="badge badge-guide">书单</span>
+</div>
+<p class="topic-desc">汇总中文与英文的入门读物、纪录片和公开课程方向，讨论不同材料的阅读顺序、难度与侧重点。</p>
+<div class="topic-foot">
+<span>资料与书单版块</span><span>讨论方向：资源整理</span><span>持续更新</span>
+</div>
+</li>
+
+</ul>
+</div>
+
+<aside>
+<div class="side-card">
+<h3>版块活跃方向</h3>
+<ul>
+<li><a href="#boards">文字与语言</a><em>释读讨论</em></li>
+<li><a href="#boards">历法与天文</a><em>换算方法</em></li>
+<li><a href="#boards">建筑与遗址</a><em>结构分析</em></li>
+<li><a href="#boards">考古与发现</a><em>信息核查</em></li>
+<li><a href="#boards">资料与书单</a><em>资源推荐</em></li>
+</ul>
+</div>
+<div class="side-card">
+<h3>发帖前提醒</h3>
+<p class="side-note">
+<strong>标注来源：</strong>涉及具体说法时，尽量说明依据来自哪类材料。<br>
+<strong>区分层级：</strong>把“已确认的事实”和“个人推测”分开表述。<br>
+<strong>尊重差异：</strong>同一问题存在多种解释是常态，讨论时对事不对人。
+</p>
+</div>
+</aside>
+
+</div>
+</div>
+</section>
+
+<section class="block alt" id="guide">
+<div class="wrap">
+<div class="block-head">
+<div>
+<h2>参与指南</h2>
+<p>四步上手，让讨论更顺畅，也让内容更有沉淀价值</p>
+</div>
+</div>
+<div class="guide-grid">
+<div class="guide-item">
+<div class="num">1</div>
+<h3>先看版规与置顶</h3>
+<p>每个版块都有对应的说明帖，包含讨论范围、发帖格式和常见误区，花几分钟阅读能省去很多来回。</p>
+</div>
+<div class="guide-item">
+<div class="num">2</div>
+<h3>选对版块再发帖</h3>
+<p>同一话题可能横跨多个方向，选择最贴近核心问题的一个版块，必要时在正文中说明关联方向。</p>
+</div>
+<div class="guide-item">
+<div class="num">3</div>
+<h3>标题写清具体问题</h3>
+<p>比起“求科普”，写清具体对象和疑问点更容易得到有效回复，也方便后来者检索到这条讨论。</p>
+</div>
+<div class="guide-item">
+<div class="num">4</div>
+<h3>持续补充与回应</h3>
+<p>讨论不是一次性的，后续补充资料、修正说法、回应不同意见，都会让话题的价值随时间增长。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block" id="resources">
+<div class="wrap">
+<div class="block-head">
+<div>
+<h2>资料整理方向</h2>
+<p>社区中较常被引用的几类材料，供查找与阅读时参考</p>
+</div>
+</div>
+<div class="resource-grid">
+
+<article class="resource-card">
+<h3>入门读物</h3>
+<p>面向零基础读者的通识类书籍，通常按历史脉络或主题展开，适合先建立整体框架。</p>
+<ul>
+<li>通史类概览读物</li>
+<li>专题性入门小册</li>
+<li>图录与视觉资料</li>
+</ul>
+</article>
+
+<article class="resource-card">
+<h3>影像与课程</h3>
+<p>纪录片与公开课程各有侧重，影像直观但需注意叙事取舍，课程结构更系统但节奏偏慢。</p>
+<ul>
+<li>考古与遗址类纪录片</li>
+<li>大学公开课与讲座</li>
+<li>博物馆线上资源</li>
+</ul>
+</article>
+
+<article class="resource-card">
+<h3>研究与论文</h3>
+<p>进阶讨论常需要回到研究文献，阅读时注意发表时间、期刊来源与作者的研究背景。</p>
+<ul>
+<li>碑铭与文字研究</li>
+<li>考古报告与测绘</li>
+<li>历法与天文研究</li>
+</ul>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="block alt" id="faq">
+<div class="wrap">
+<div class="block-head">
+<div>
+<h2>常见问题</h2>
+<p>关于玛雅luntan与玛雅文明学习的高频疑问</p>
+</div>
+</div>
+<div class="faq-list">
+
+<details class="faq-item" open>
+<summary>完全不了解玛雅文明，可以从哪里开始？</summary>
+<div class="faq-body">建议先建立时间与地理的整体框架，了解玛雅文明大致分布在今天的中美洲地区、延续了相当长的时间跨度，再按兴趣选择文字、建筑或历法其中一个方向深入。社区中的“入门问答”类话题和资料与书单版块，通常会有针对零基础读者的整理。</div>
+</details>
+
+<details class="faq-item">
+<summary>讨论中涉及具体结论时，需要注意什么？</summary>
+<div class="faq-body">玛雅文明研究中存在不少仍在讨论的问题，不同学者对同一材料的解释可能不同。发帖或回帖时，建议把可确认的信息与个人推测分开表述，并尽量说明依据来源，这样既方便他人核对，也能让讨论更有价值。</div>
+</details>
+
+<details class="faq-item">
+<summary>看到互相矛盾的说法时该怎么处理？</summary>
+<div class="faq-body">先确认双方讨论的是不是同一对象和同一时期，再看各自依据的材料类型。很多分歧来自材料范围不同或术语使用不一致。可以在对应版块发帖，把不同说法并列列出，请有了解的成员一起梳理，而不是急于下结论。</div>
+</details>
+
+<details class="faq-item">
+<summary>社区对发帖内容有哪些基本要求？</summary>
+<div class="faq-body">核心是三点：选对版块、标题写清具体问题、内容尽量注明依据。避免发布无法核实的断言、夸大表述或与版块主题无关的内容。涉及转载时，说明来源与出处是基本礼貌。</div>
+</details>
+
+<details class="faq-item">
+<summary>如何判断一条关于玛雅的新发现是否可靠？</summary>
+<div class="faq-body">可以按顺序看几点：消息是否指向原始论文或考古机构说明；是否经过同行评议；媒体表述是否明显夸大；是否有其他独立来源交叉印证。如果只有单一来源且措辞夸张，建议保持谨慎，等待更多信息。</div>
+</details>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>玛雅luntan</h4>
+<p>一个面向中文读者的玛雅文明讨论社区，围绕历史、文字、建筑、历法与考古展开交流。鼓励理性表达、标注来源、尊重不同观点，让讨论能够长期沉淀。</p>
+</div>
+<div class="footer-col">
+<h5>讨论版块</h5>
+<ul>
+<li><a href="#boards">文字与语言</a></li>
+<li><a href="#boards">建筑与遗址</a></li>
+<li><a href="#boards">历法与天文</a></li>
+<li><a href="#boards">历史与政治</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>社区导航</h5>
+<ul>
+<li><a href="#topics">热门话题</a></li>
+<li><a href="#guide">参与指南</a></li>
+<li><a href="#resources">资料整理</a></li>
+<li><a href="#faq">常见问题</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>交流原则</h5>
+<ul>
+<li><a href="#guide">标注资料来源</a></li>
+<li><a href="#guide">区分事实与推测</a></li>
+<li><a href="#guide">理性对待分歧</a></li>
+<li><a href="#guide">尊重不同观点</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>玛雅luntan · 玛雅文明中文讨论社区</span>
+<span>内容以交流学习为目的，具体史实请以专业研究资料为准</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('nav.mainnav a[href^="#"]');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el){ sections.push({link:a, el:el}); }
+  });
+  if(!sections.length) return;
+  function onScroll(){
+    var pos = window.scrollY + 120;
+    var current = sections[0];
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= pos){ current = s; }
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(current){ current.link.classList.add('active'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+  </html>
